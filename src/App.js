@@ -2,29 +2,33 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import MainContainer from './containers/MainContainer';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Spot from './components/Spot'
+import Show from './components/Show'
+import { NoMatch } from './components/NoMatch'
+import { Layout } from './components/Layout'
+// import PostForm from './components/PostForm'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
 
   return (
-    <div >
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      < MainContainer />
-    </div>
-    
+   
+    <React.Fragment>
+      <Layout>
+      <Router>
+        <Switch>
+          <Route  path="/" component={ MainContainer }/>
+          <Route  path={`/spots/${Spot.key}`} component={ Show }/>
+          {/* <Route  path={`/spots/:id/edit`} component={ PostForm }/> */}
+          <Route component={ NoMatch }/>
+        </Switch>
+      </Router>
+      </Layout>
+    </React.Fragment>
   )
 }
 
 export default App;
+

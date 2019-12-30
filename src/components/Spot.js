@@ -1,14 +1,31 @@
 import React, { Component } from 'react'
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
+// import Post from './Post'
 
 export class Spot extends Component {
 
-    
     render() {
-        const sometext = "hey"
         const { name, image, kind, details, zip} = this.props.spot
         const spot = this.props.spot
         return (
-            <div>
+            <div className="spot" onClick={(evt)=>this.props.handleClick(spot)} >
+                <h4>
+                {
+                name
+                }
+                </h4>
+                <img alt="spotimg" src={image} style={{ width: '14rem' }}/>
+            </div>     
+        )
+    }
+
+}
+
+
+
+{/* <div>
                 <div onClick={(evt)=>this.props.handleClick(evt.target.value)}>
                     <h1 >
                         {name}
@@ -25,9 +42,6 @@ export class Spot extends Component {
                     
                 </div>
 
-            </div>
-        )
-    }
-}
+            </div> */}
 
 export default Spot
