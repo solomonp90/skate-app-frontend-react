@@ -6,9 +6,26 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import PostForm from '../components/PostForm'
 
 export class ShowContainer extends Component {
+
+    
+    postFormSubmission = (evt) => {
+        console.log(evt)
+
+        
+    }
+    
+    postFormWithProps = (evt) => {
+        // console.log(evt)
+        return <PostForm addPost={this.postFormSubmission}/>
+    }
+    
+     
     render() {
         // const { name , kind, image, details, zip} = this.props.spot
-        const spot = this.props.spot
+
+         
+
+        // const spot = this.props.spot
         return (
             <div className="row" >
                  {
@@ -22,7 +39,9 @@ export class ShowContainer extends Component {
                                 key={spotObj.id} 
                                 spotClickStat={this.props.spotClickStat} 
                                 addPost={this.props.addPost} 
-                                formComponent={<PostForm addPost={this.props.addPost}/>} />
+                                postForm={this.props.postFormWithProps}
+                                loggedInUserId={this.props.loggedInUserId}
+                                 />
                             </ListGroup.Item>
                        </ListGroup>
                     </Card>

@@ -31,3 +31,162 @@ return <ListGroupItem>{post.content},{<img alt="postimg" src={post.image} style=
 {/* {<Post/>} */}
 </div>      
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import logo from './logo.svg';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+// import PostForm from './components/PostForm'
+import React from 'react';
+import './App.css';
+import MainContainer from './containers/MainContainer';
+import Spot from './components/Spot'
+import Show from './components/Show'
+import { NoMatch } from './components/NoMatch'
+import { Layout } from './components/Layout'
+import { Route, Switch, Link, NavLink } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+function App() {
+
+  state = {
+    spots:[],
+    spotClick: true,
+    spot: [],
+    posts:[]
+    
+}
+
+
+
+render() {
+    
+    return (
+      (
+      
+          <div>
+            <NavLink to= "/">Home</NavLink>
+            <NavLink to= "/main">Main</NavLink>
+            <Switch>
+            <Route exact path = "/main" component= {this.mainWithProps} />
+            <Route exact path = "/" component= {Home} />
+            </Switch>
+          </div>
+        )
+    )
+}
+
+
+}
+    // <React.Fragment>
+    //   <Layout>
+    //   <Router>
+    //     <Switch>
+    //       <Route  path="/" component={ MainContainer }/>
+    //       <Route  path={`/spots/${Spot.key}`} component={ Show }/>
+    //       {/* <Route  path={`/spots/:id/edit`} component={ PostForm }/> */}
+    //       <Route component={ NoMatch }/>
+    //     </Switch>
+    //   </Router>
+    //   </Layout>
+    // </React.Fragment>
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

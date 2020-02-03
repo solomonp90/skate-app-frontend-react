@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import ListGroupItem from 'react-bootstrap/ListGroupItem';
+import { NavLink } from 'react-router-dom'
+// import Card from 'react-bootstrap/Card';
+// import ListGroup from 'react-bootstrap/ListGroup';
+// import ListGroupItem from 'react-bootstrap/ListGroupItem';
 // import Post from './Post'
 
 export class Spot extends Component {
@@ -10,6 +11,7 @@ export class Spot extends Component {
         const { name, image, kind, details, zip} = this.props.spot
         const spot = this.props.spot
         return (
+            <NavLink to= {`/main/${spot.id}`}>
             <div className="spot" onClick={(evt)=>this.props.handleClick(spot)} >
                 <h4>
                 {
@@ -17,7 +19,8 @@ export class Spot extends Component {
                 }
                 </h4>
                 <img alt="spotimg" src={image} style={{ width: '14rem' }}/>
-            </div>     
+            </div>   
+            </NavLink>  
         )
     }
 
