@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import Card from 'react-bootstrap/Card';
 // import ListGroup from 'react-bootstrap/ListGroup';
 // import ListGroupItem from 'react-bootstrap/ListGroupItem';
@@ -11,7 +11,7 @@ export class Spot extends Component {
         const { name, image, kind, details, zip} = this.props.spot
         const spot = this.props.spot
         return (
-            <NavLink to= {`/main/${spot.id}`}>
+            <Link to= {`/home/${spot.id}`}>
             <div className="spot" onClick={(evt)=>this.props.handleClick(spot)} >
                 <h4>
                 {
@@ -20,7 +20,7 @@ export class Spot extends Component {
                 </h4>
                 <img alt="spotimg" src={image} style={{ width: '14rem' }}/>
             </div>   
-            </NavLink>  
+            </Link>  
         )
     }
 

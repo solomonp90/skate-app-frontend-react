@@ -82,13 +82,15 @@ export class MainContainer extends Component {
                 < SpotContainer 
                 spots={ this.props.spots } 
                 spotClick={ this.props.spotClick } 
-                spotClickStat={this.props.spotClickStat}/>
+                spotClickStat={ this.props.spotClickStat }
+                />
                 
                 < ShowContainer 
                 spot={this.props.spot} 
                 spotShow={this.props.spotShow} 
                 spotForm={this.props.SpotForm}
                 postFormWithProps={this.props.postFormWithProps}
+                post={this.props.post}
                 loggedInUserId={this.props.loggedInUserId}
                 />
             </div>

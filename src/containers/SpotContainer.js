@@ -18,7 +18,8 @@ export class SpotContainer extends Component {
                                 spot={spotObj} 
                                 handleClick={this.props.spotClick} 
                                 key={spotObj.id} 
-                                spotClickStat={this.props.spotClickStat}/>
+                                spotClickStat={this.props.spotClickStat}
+                                />
                             </ListGroup.Item>
                        </ListGroup>
                     </Card>

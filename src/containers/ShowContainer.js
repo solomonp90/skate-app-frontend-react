@@ -41,6 +41,7 @@ export class ShowContainer extends Component {
                                 addPost={this.props.addPost} 
                                 postForm={this.props.postFormWithProps}
                                 loggedInUserId={this.props.loggedInUserId}
+                                post={this.props.post}
                                  />
                             </ListGroup.Item>
                        </ListGroup>

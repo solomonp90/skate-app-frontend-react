@@ -36,13 +36,14 @@ class LogIn extends React.Component {
             errors: data.errors
           })
         else
-          this.props.setToken(data.token, data.skater_id)
+        // console.log("token id and skater from login submitted:",data.token, data.skater_id, data.skater)
+          this.props.setToken(data.token, data.skater_id, data.skater)
       })
   }
 
   signUpSubmitted = (event) => {
     event.preventDefault()
-    console.log(event.target["zip"].value)
+  
 
     fetch(`http://localhost:3000/skaters`, {
       method:'POST',
@@ -57,7 +58,16 @@ class LogIn extends React.Component {
       })
     })
     .then(r => r.json())
-    .then(console.log)
+    .then((data)=>{
+      if (data.errors) {
+        this.setState({
+          errors:data.errors
+        })
+      } else {
+        console.log(data)
+        this.props.setToken(data.token, data.skater_id, data.skater)
+      }
+    })
   }
 
   render(){
@@ -85,10 +95,8 @@ class LogIn extends React.Component {
                     type="password" 
                     onChange={ this.onChange } 
                     name="password" 
-                    value={ this.state.password } />
-                    < Link to={"/main"}>
-            <input type="submit" />
-                  </Link>
+                    value={ this.state.password } />            
+            <input type="submit" />       
           </form>
         </>
         : <>
@@ -113,9 +121,8 @@ class LogIn extends React.Component {
                     onChange={ this.onChange } 
                     name="password" 
                     value={ this.state.password } />
-                    <Link to={"/main"}>
             <input type="submit" />
-            </Link>
+            
           </form>
         </>
       }
